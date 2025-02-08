@@ -1,0 +1,41 @@
+[build-system]
+requires = [
+    "setuptools>=60",
+    "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "tinytapeout.__version__"}
+
+[project]
+name = "simplhdl-tinytapeout"
+dynamic = ['version']
+description = "SimplHDL plugin for Tiny TapeOut"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.8"
+dependencies = [
+    "simplhdl>=0.3.0",
+]
+authors = [
+  {name = "Rasmus Grøndahl Olsen", email = "simplhdl@gmail.com"},
+]
+maintainers = [
+  {name = "Rasmus Grøndahl Olsen", email = "simplhdl@gmail.com"},
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.entry-points."simplhdl.plugins"]
+flow = "tinytapeout"
